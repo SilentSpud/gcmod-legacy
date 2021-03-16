@@ -1,0 +1,26 @@
+type Mod {
+  id: ID!
+  title: String
+  author: String
+  version: String!
+  description: String
+  dependencies: [Mod]
+  incompatible: [Mod]
+  filepath: String
+}
+
+type Query {
+  mods: [Mod]
+  mod: Mod
+}
+
+query getMods {
+  mod {
+    ...ModInfo
+  }
+}
+
+fragment ModInfo on Mod {
+  title
+  filepath
+}
