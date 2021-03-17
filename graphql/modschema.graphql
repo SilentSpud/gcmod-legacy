@@ -1,26 +1,24 @@
 type Mod {
-  id: ID!
-  title: String
+#  id: ID!
+  key: String!
+  name: String
   author: String
   version: String!
+  gcVersion: String
   description: String
+  filePath: String
+  source: String
   dependencies: [Mod]
   incompatible: [Mod]
-  filepath: String
 }
 
 type Query {
   mods: [Mod]
-  mod: Mod
 }
 
-query getMods {
-  mod {
-    ...ModInfo
-  }
-}
-
-fragment ModInfo on Mod {
-  title
-  filepath
+fragment ModMini on Mod {
+  key
+  version
+  name
+  filePath
 }
