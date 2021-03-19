@@ -1,4 +1,3 @@
-import * as semver from 'semver';
 import * as ini from 'ini';
 import { IniParser } from './IniHandler'
 import fetch from 'node-fetch';
@@ -114,10 +113,10 @@ export const ModParser = async (modLine: Array<string>): Promise<Mod> => {
         }
       })[0];
       mod.filePath = latestRelease['browser_download_url'];
-      if (semver.coerce(releaseData.tag_name)) {
-        mod.version = semver.coerce(releaseData.tag_name).version;
+      if (releaseData.tag_name) {
+        mod.version = releaseData.tag_name;
       } else {
-        mod.version = semver.coerce(releaseData.tag_name).version;
+        mod.version = '1.0.0';
       }
     }
 

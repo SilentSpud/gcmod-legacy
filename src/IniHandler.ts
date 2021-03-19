@@ -1,6 +1,4 @@
-import SemVer from 'semver/classes/semver';
-import semverCoerce from 'semver/functions/coerce'
-import { ModProperty } from './ModClass'
+import { ModProperty } from './ModHandler'
 
 export enum IniKey {
   Name = 'Name', // Mod name
@@ -17,9 +15,9 @@ export enum IniKey {
   State = 'State', // Mod release state
   Downloads = 'Downloads', // Download count
 }
-export type IniElement = { key: ModProperty, value: (string | SemVer) };
+export type IniElement = { key: ModProperty, value: (string) };
 
-export const IniParser = (keyName: string, keyValue: (string | boolean)): (boolean | IniElement) => {
+export const IniParser = (keyName: string, keyValue: (string | boolean)): (false | IniElement) => {
   // Return false for boolean dud keys
   if (typeof keyValue == 'boolean') return false;
 
@@ -29,15 +27,15 @@ export const IniParser = (keyName: string, keyValue: (string | boolean)): (boole
     case IniKey.Author:
       return { key: ModProperty.Author, value: keyValue };
     case IniKey.Version:
-      return { key: ModProperty.Version, value: semverCoerce(keyValue) };
+      return { key: ModProperty.Version, value: keyValue };
     case IniKey.GCVersion:
-      return { key: ModProperty.GCVersion, value: semverCoerce(keyValue) };
+      return { key: ModProperty.GCVersion, value: keyValue };
     case IniKey.Description:
       return { key: ModProperty.Description, value: keyValue };
     case IniKey.FilePath:
       return { key: ModProperty.FilePath, value: keyValue };
     case IniKey.DataPath:
-      return { key: ModProperty.DataPath, value: keyValue };
+      return { key: ModProperty.VerPath, value: keyValue };
     case IniKey.RootPath:
       return { key: ModProperty.RootPath, value: keyValue };
   }
