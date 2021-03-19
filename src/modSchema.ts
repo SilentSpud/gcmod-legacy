@@ -1,6 +1,7 @@
-type Mod {
-#  id: ID!
-  key: String!
+import { gql } from 'apollo-server';
+
+export default gql`type Mod {
+  key: ID!
   name: String
   author: String
   version: String!
@@ -14,6 +15,7 @@ type Mod {
 
 type Query {
   mods: [Mod]
+  mod(key: String!): Mod
 }
 
 fragment ModMini on Mod {
@@ -21,4 +23,4 @@ fragment ModMini on Mod {
   version
   name
   filePath
-}
+}`;
