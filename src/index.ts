@@ -38,4 +38,4 @@ const gqlResolvers = {
 };
 
 const gqlServer = new ApolloServer({ typeDefs: modSchema, resolvers: gqlResolvers });
-gqlServer.listen().then(({ url }) => console.log('gql server ready'));
+gqlServer.listen().then(({ url }) => console.log(`gql server ready: ${url}`));
