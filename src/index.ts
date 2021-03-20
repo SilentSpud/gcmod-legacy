@@ -3,7 +3,6 @@ import * as ini from 'ini';
 import fetch from 'node-fetch';
 import * as dotenv from 'dotenv';
 import { ApolloServer } from 'apollo-server';
-
 //#endregion
 //#region Load .env variables
 dotenv.config();
@@ -38,4 +37,4 @@ const gqlResolvers = {
 };
 
 const gqlServer = new ApolloServer({ typeDefs: modSchema, resolvers: gqlResolvers });
-gqlServer.listen().then(({ url }) => console.log(`gql server ready: ${url}`));
+gqlServer.listen({ host: 'localhost', port: 4000 }).then(({ url }) => console.log(`gql server ready: ${url}`));
