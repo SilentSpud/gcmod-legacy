@@ -32,6 +32,14 @@ const gqlResolvers = {
     mods: () => mods,
     mod: (_parent, args) => {
       return mods.find(mod => mod.key === args.key);
+    },
+    search: (_parent, args) => {
+      return mods.filter((currMod) => {
+        return (currMod.author.toLocaleLowerCase().includes(args.text) ||
+        currMod.description.toLocaleLowerCase().includes(args.text) ||
+        currMod.name.toLocaleLowerCase().includes(args.text) ||
+        currMod.key.toLocaleLowerCase().includes(args.text));
+      });
     }
   },
 };

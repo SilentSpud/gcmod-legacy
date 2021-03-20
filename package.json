@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "node build/index.js",
-    "clean": "rimraf coverage build tmp",
+    "clean": "rimraf coverage build tmp dist",
     "build": "tsc -p tsconfig.release.json",
     "build:watch": "tsc -w -p tsconfig.release.json"
   },

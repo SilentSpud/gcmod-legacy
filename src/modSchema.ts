@@ -16,11 +16,5 @@ export default gql`type Mod {
 type Query {
   mods: [Mod]
   mod(key: String!): Mod
-}
-
-fragment ModMini on Mod {
-  key
-  version
-  name
-  filePath
+  search(text: String!): [Mod]
 }`;
