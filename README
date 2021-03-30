@@ -1,4 +1,4 @@
-# GC.Mod Legacy Mod List Server
+GC.Mod Legacy Mod List Server
 Proof of concept for poling the mod list and publishing it through a gql interface.
 
 This is maintained solely for testing the various components of the new gc.mod system.
