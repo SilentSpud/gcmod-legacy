@@ -9,7 +9,7 @@
     "@types/node-fetch": "^2.5.10",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
-    "ts-loader": "^8.1.0",
+    "ts-loader": "^9.0.0",
     "tsutils": "^3.21.0",
     "typescript": "^4.2.4"
   },
