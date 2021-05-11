@@ -24,7 +24,7 @@
   "dependencies": {
     "@octokit/core": "^3.4.0",
     "apollo-server": "^2.23.0",
-    "dotenv": "^9.0.0",
+    "dotenv": "^9.0.2",
     "graphql": "^15.5.0",
     "ini": "^2.0.0",
     "node-fetch": "^2.6.1",
