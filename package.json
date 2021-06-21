@@ -25,7 +25,7 @@
     "@octokit/core": "^3.4.0",
     "apollo-server": "^2.23.0",
     "dotenv": "^9.0.0",
-    "graphql": "^15.5.0",
+    "graphql": "^15.5.1",
     "ini": "^2.0.0",
     "node-fetch": "^2.6.1",
     "tslib": "^2.2.0"
